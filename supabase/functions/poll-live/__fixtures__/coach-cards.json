@@ -1,0 +1,44 @@
+{
+  "header": { "status": { "finished": true, "started": true } },
+  "content": {
+    "matchFacts": {
+      "playerOfTheMatch": { "id": 920101 },
+      "events": {
+        "events": [
+          { "type": "Card", "card": "Red", "isHome": false,
+            "player": { "id": 26630, "name": "Arne Slot" },
+            "cardDescription": { "localizedKey": "coach", "defaultText": "Coach" } },
+          { "type": "Card", "card": "Yellow", "isHome": true,
+            "player": { "id": 78626, "name": "David Moyes" },
+            "cardDescription": { "localizedKey": "coach", "defaultText": "Coach" } },
+          { "type": "Card", "card": "Yellow", "isHome": true,
+            "player": { "id": 555, "name": "Some Player" },
+            "cardDescription": null }
+        ]
+      }
+    },
+    "lineup": {
+      "homeTeam": {
+        "coach": { "id": 78626, "name": "David Moyes" },
+        "starters": [
+          { "id": 920102, "performance": { "events": [] } }
+        ],
+        "subs": [
+          { "id": 700, "performance": { "substitutionEvents": [ { "time": 60, "type": "subIn" } ] } }
+        ]
+      },
+      "awayTeam": {
+        "coach": { "id": 26630, "name": "Arne Slot" },
+        "starters": [],
+        "subs": [
+          { "id": 920101, "performance": { "substitutionEvents": [ { "time": 66, "type": "subIn" } ] } }
+        ]
+      }
+    },
+    "playerStats": {
+      "920101": { "id": 920101, "teamId": 200, "stats": [ { "stats": { "Minutes played": { "stat": { "value": 30 } }, "FotMob rating": { "stat": { "value": 8.5 } }, "Goals": { "stat": { "value": 1 } }, "Assists": { "stat": { "value": 1 } } } } ] },
+      "920102": { "id": 920102, "teamId": 100, "stats": [ { "stats": { "Minutes played": { "stat": { "value": 90 } }, "FotMob rating": { "stat": { "value": 7.0 } }, "Goals": { "stat": { "value": 1 } } } } ] },
+      "700":    { "id": 700, "teamId": 100, "stats": [ { "stats": { "Minutes played": { "stat": { "value": 30 } }, "FotMob rating": { "stat": { "value": 6.5 } } } } ] }
+    }
+  }
+}

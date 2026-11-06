@@ -1,0 +1,22 @@
+# Static hosting for the Expo web export, PWA-correct headers.
+:{$PORT:8080} {
+	root * /srv
+	encode gzip
+
+	# Service worker: must never be cached so updates roll out immediately,
+	# and must be allowed to control the whole origin.
+	header /sw.js {
+		Cache-Control "no-cache, no-store, must-revalidate"
+		Service-Worker-Allowed "/"
+	}
+	header /manifest.json Cache-Control "no-cache"
+
+	# Hashed bundles are immutable — cache hard.
+	header /_expo/static/* Cache-Control "public, max-age=31536000, immutable"
+	header /icons/* Cache-Control "public, max-age=86400"
+
+	# Expo Router static export: each route has its own HTML; fall back to the
+	# app shell for client-side routes (deep links, dynamic segments).
+	try_files {path} {path}.html /index.html
+	file_server
+}
